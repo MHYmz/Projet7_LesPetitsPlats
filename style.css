@@ -1,0 +1,281 @@
+/* BODY */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Manrope;
+}
+
+p {
+  font-family: Manrope;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5rem;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url(./assets/img/bg-img.webp), lightgray 50%/cover no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 40rem;
+}
+
+.logo {
+  position: absolute;
+  top: 5rem;
+}
+
+.center-title {
+  padding: 0 23rem;
+}
+
+.center-title h1 {
+  color: #FFD15B;
+  text-align: center;
+  font-family: Anton;
+  font-size: 44px;
+  padding: 0 2.8rem;
+  margin-bottom: 50px;
+  letter-spacing: 2px; /* Ajuste la valeur selon tes préférences */
+}
+
+.head-input {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.head-input input {
+  color: #7A7A7A;
+  border-radius: 10px;
+  border: none;
+  height: 60px;
+  width: 100%;
+  padding: 0 65px 0 30px;
+}
+
+.clear-searchbar {
+  display: none;
+  position: absolute;
+  right: 70px;
+  height: 15px;
+}
+
+.head-input button {
+  position: absolute;
+  right: 8px;
+  width: 45px;
+  height: 46px;
+  border: 0;
+  border-radius: 10px;
+  background: #1B1B1B;
+  cursor: pointer;
+}
+
+/* MAIN */
+main {
+  background: #E1E1E1;
+}
+
+/* FILTRE LIST */
+.filtre-container {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem 8rem;
+  justify-content: space-between;
+}
+
+.filtre-element {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+}
+
+.filtre-select-container {
+  display: flex;
+  flex-direction: row;
+  padding: 0 8rem;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+#filtre-selected .filtre-select {
+  background: #FFD15B;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.filtre-select {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 200px;
+  background: #fff;
+  border-radius: 0.8rem;
+  padding: 1rem;
+}
+
+.filtre-label {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.filtre-label input {
+  display: none;
+  border-color: 1px solid #C6C6C6;
+  padding: 0.3rem;
+}
+
+.filtre-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.filtre-title img {
+  width: 20px;
+  height: 15px;
+}
+
+.filtre-content {
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  position: absolute;
+  background: #ffffff;
+  z-index: 9;
+  padding: 20px 15px 5px 15px;
+  width: calc(100% - 30px);
+  left: 0;
+  transform: translateY(1.5rem);
+  border-radius: 0 0 0.8rem 0.8rem;
+}
+
+.filtre-input {
+  position: relative;
+}
+
+.filtre-input input {
+  width: calc(100% - 70px);
+  padding: 5px 60px 5px 10px;
+  border-radius: 2px;
+  border: 1px solid var(--Light-Grey, #C6C6C6);
+}
+
+.filtre-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  right: 15px;
+  top: 8px;
+}
+
+.filtre-icon img:first-child {
+  width: 10px;
+  cursor: pointer;
+}
+
+.filtre-icon img {
+  width: 15px;
+}
+
+.filtre-list {
+  display: flex;
+  flex-direction: column;
+  max-height: 15rem;
+  overflow: auto;
+  cursor: pointer;
+}
+
+.show {
+  display: flex;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+/* SECTION RECETTE */
+#recipes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
+  padding: 5rem 8rem;
+}
+
+article {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2rem;
+  margin: auto;
+}
+
+.time {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  width: 4.5rem;
+  text-align: center;
+  border-radius: 15px;
+  background: #FFD15B;
+}
+
+article img {
+  object-fit: cover;
+  width: 100%;
+  height: 360px;
+  border-radius: 2rem 2rem 0 0;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 0 0 2rem 2rem;
+}
+
+h4 {
+  font-family: Manrope;
+  font-weight: 700;
+  font-size: 12px;
+  color: #7A7A7A;
+}
+
+.title-name {
+  font-family: Anton;
+  font-weight: 400;
+  font-size: 18px;
+  height: 3rem;
+}
+
+.description {
+  height: 6rem;
+}
+
+.ingredients {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  height: 12rem;
+}
+
+.ingredients div {
+  width: 50%;
+}
+
+.quantity {
+  color: #7A7A7A;
+}
