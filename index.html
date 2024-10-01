@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Les petits plats</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="./js/recipes.js"></script>
+
+<!--    FONT     -->
+    <link href='https://fonts.googleapis.com/css?family=Manrope' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet'>
+<!--    / FONT     -->
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/svg/logo.svg" alt="Logo Les petits plats">
+            <img src="assets/svg/icon-logo.svg" alt="icon du Logo Les petits plats">
+        </div>
+        <div class="center-title">
+            <h1>
+                CHERCHEZ PARMI PLUS DE 1500 RECETTES DU QUOTIDIEN,SIMPLES ET DÉLICIEUSES
+            </h1>
+            <form id="search-form" action="" method="get" class="head-input">
+                <input type="text" name="search-bar" id="search-bar" placeholder="Rechercher une recette, un ingrédient, ...">
+                <img src="assets/svg/close.svg" alt="close btn" class="clear-searchbar" onclick="clearSearch(this)">
+                <button type="submit"><img src="assets/svg/search-white.svg" alt="Bouton de recherche"></button>
+            </form>
+        </div>
+    </header>
+    <main>
+        <div class="filtre-container">
+            <div class="filtre-element">
+                <div class="filtre-select filtre-select-ingredients">
+                    <div class="filtre-label" onclick="showDropdown(this);">
+                        <div class="filtre-title">
+                            <p>Ingrédients</p>
+                            <img src="./assets/svg/caret-down.svg" alt="caret select">
+                        </div>
+                    </div>
+                    <div class="filtre-content">
+                        <div class="filtre-input">
+                            <input type="text" name="ingredients-search" id="ingredients-search" onkeyup="filterElement(this);">
+                            <div class="filtre-icon">
+                                <img src="assets/svg/close.svg" alt="close btn" onclick="clearSearch(this)">
+                                <img src="assets/svg/search-grey.svg" alt="Search icon">
+                            </div>
+                        </div>
+                        <div class="filtre-list-ingredients filtre-list"></div>
+                    </div>
+                </div>
+
+                <div class="filtre-select filtre-select-appareils">
+                    <div class="filtre-label" onclick="showDropdown(this);">
+                        <div class="filtre-title">
+                            <p>Appareils</p>
+                            <img src="./assets/svg/caret-down.svg" alt="caret select">
+                        </div>
+                    </div>
+                    <div class="filtre-content">
+                        <div class="filtre-input">
+                            <input type="text" name="ingredients-search" id="appareils-search" onkeyup="filterElement(this);">
+                            <div class="filtre-icon">
+                                <img src="assets/svg/close.svg" alt="close btn" onclick="clearSearch(this)">
+                                <img src="assets/svg/search-grey.svg" alt="Search icon">
+                            </div>
+                        </div>
+                        <div class="filtre-list-appareils filtre-list"></div>
+                    </div>
+                </div>
+
+                <div class="filtre-select filtre-select-ustensils">
+                    <div class="filtre-label" onclick="showDropdown(this);">
+                        <div class="filtre-title">
+                            <p>Ustensils</p>
+                            <img src="./assets/svg/caret-down.svg" alt="caret select">
+                        </div>
+                    </div>
+                    <div class="filtre-content">
+                        <div class="filtre-input">
+                            <input type="text" name="ustensils-search" id="ustensils-search" onkeyup="filterElement(this);">
+                            <div class="filtre-icon">
+                                <img src="assets/svg/close.svg" alt="close btn" onclick="clearSearch(this)">
+                                <img src="assets/svg/search-grey.svg" alt="Search icon">
+                            </div>
+                        </div>
+                        <div class="filtre-list-ustensils filtre-list"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="info-recette">
+                <p id="nb-recipes"></p>
+                <p>recettes</p>
+            </div>
+        </div>
+
+        <div id="filtre-selected" class="filtre-select-container">
+        </div>
+
+        <section id="recipes">
+
+        </section>
+    </main>
+
+    <script src="js/displayRecipes.js"></script>
+    <script src="js/importData.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>

@@ -1,0 +1,317 @@
+/* BODY */
+* {
+    margin: 0; 
+    padding: 0; 
+    font-family: Manrope; 
+}
+
+p {
+    font-family: Manrope; 
+    font-weight: 400; 
+    font-size: 14px; 
+}
+
+/* En-tête de la page */
+header {
+    display: flex; 
+    justify-content: center; 
+    flex-direction: column; 
+    padding: 5rem; 
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url(../assets/img/bg-img.webp), lightgray 50%/cover no-repeat;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    height: 40rem; 
+}
+
+/* Logo de l'application */
+.logo {
+    position: absolute; 
+    top: 5rem; 
+}
+
+/* Titre central */
+.center-title {
+    padding: 0 23rem; 
+}
+
+/* Titre principal */
+.center-title h1 {
+    color: #FFD15B; 
+    text-align: center; 
+    font-family: Anton; 
+    font-size: 44px; 
+    padding: 0 2.8rem; 
+    margin-bottom: 50px; 
+}
+
+/* Conteneur d'entrée de recherche dans l'en-tête */
+.head-input {
+    position: relative; 
+    display: flex; 
+    flex-direction: row; 
+    align-items: center; 
+}
+
+/* Champ de recherche */
+.head-input input {
+    color: #7A7A7A; 
+    border-radius: 10px; 
+    border: none; 
+    height: 60px; 
+    width: 100%; 
+    padding: 0 65px 0 30px; 
+}
+
+/* Bouton de nettoyage de la barre de recherche (invisible par défaut) */
+.clear-searchbar {
+    display: none; 
+    position: absolute; 
+    right: 70px; 
+    height: 15px; 
+}
+
+/* Bouton de recherche dans l'en-tête */
+.head-input button {
+    position: absolute; 
+    right: 8px; 
+    width: 45px; 
+    height: 46px; 
+    border: 0; 
+    border-radius: 10px; 
+    background: #1B1B1B; 
+    cursor: pointer; 
+}
+
+/* MAIN */
+main {
+    background: #E1E1E1; 
+}
+
+/* Conteneur de filtres */
+.filtre-container {
+    display: flex; 
+    flex-direction: row; 
+    padding: 2rem 8rem; 
+    justify-content: space-between; 
+}
+
+/* Élément de filtre */
+.filtre-element {
+    display: flex; 
+    flex-direction: row; 
+    gap: 5rem; 
+}
+
+/* Conteneur des sélections de filtres */
+.filtre-select-container {
+    display: flex; 
+    flex-direction: row; 
+    padding: 0 8rem; 
+    gap: 20px; 
+    flex-wrap: wrap; 
+}
+
+/* Sélection de filtre */
+#filtre-selected .filtre-select {
+    background: #FFD15B; 
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between; 
+}
+
+/* Élément sélectionné du filtre */
+.filtre-select {
+    position: relative; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 2rem; 
+    width: 200px; 
+    background: #fff; 
+    border-radius: 0.8rem; 
+    padding: 1rem; 
+}
+
+/* Étiquette de filtre */
+.filtre-label {
+    display: flex; 
+    flex-direction: column; 
+    gap: 1rem; 
+}
+
+/* Champ de filtre (invisible) */
+.filtre-label input {
+    display: none; 
+    border-color: 1px solid #C6C6C6; 
+    padding: 0.3rem; 
+}
+
+/* Titre de filtre */
+.filtre-title {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center; 
+    cursor: pointer; 
+}
+
+/* Image dans le titre de filtre */
+.filtre-title img {
+    width: 20px; 
+    height: 15px; 
+}
+
+/* Contenu du filtre (invisible par défaut) */
+.filtre-content {
+    display: none; 
+    flex-direction: column; 
+    gap: 15px; 
+    position: absolute; 
+    background: #ffffff; 
+    z-index: 9; 
+    padding: 20px 15px 5px 15px; 
+    width: calc(100% - 30px); 
+    left: 0; 
+    transform: translateY(1.5rem); 
+    border-radius: 0 0 0.8rem 0.8rem; 
+}
+
+/* Champ d'entrée de filtre */
+.filtre-input {
+    position: relative; 
+}
+
+/* Champ d'entrée dans le filtre */
+.filtre-input input {
+    width: calc(100% - 70px); 
+    padding: 5px 60px 5px 10px; 
+    border-radius: 2px; 
+    border: 1px solid var(--Light-Grey, #C6C6C6); 
+}
+
+/* Icône de filtre */
+.filtre-icon {
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    position: absolute; 
+    right: 15px; 
+    top: 8px; 
+}
+
+/* Première image de l'icône de filtre */
+.filtre-icon img:first-child {
+    width: 10px; 
+    cursor: pointer; 
+}
+
+/* Autres images d'icônes de filtre */
+.filtre-icon img {
+    width: 15px; 
+}
+
+/* Liste de filtres */
+.filtre-list {
+    display: flex; 
+    flex-direction: column; 
+    max-height: 15rem; 
+    overflow: auto; 
+    cursor: pointer; 
+}
+
+/* Affichage du filtre */
+.show {
+    display: flex; 
+}
+
+/* Rotation de l'icône */
+.rotate {
+    transform: rotate(180deg); 
+}
+
+/* SECTION RECETTE */
+section {
+    display: flex; 
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    row-gap: 8rem; 
+    padding: 5rem 8rem; 
+}
+
+/* Article contenant une recette */
+article {
+    position: relative; 
+    display: flex; 
+    flex-direction: column; 
+    width: calc(33.3333333333% - 5rem); 
+    border-radius: 2rem; 
+}
+
+/* Temps de préparation de la recette */
+.time {
+    position: absolute; 
+    right: 1rem; 
+    top: 1rem; 
+    width: 4.5rem; 
+    text-align: center; 
+    border-radius: 15px; 
+    background: #FFD15B; 
+}
+
+/* Image de la recette */
+article img {
+    object-fit: cover; 
+    width: 100%; 
+    height: 360px; 
+    border-radius: 2rem 2rem 0 0; 
+}
+
+/* Texte dans l'article de recette */
+.card-text {
+    display: flex; 
+    flex-direction: column; 
+    gap: 0.8rem; 
+    background: #fff; 
+    padding: 2rem; 
+    border-radius: 0 0 2rem 2rem; 
+}
+
+/* Titre secondaire */
+h4 {
+    font-family: Manrope; 
+    font-weight: 700; 
+    font-size: 12px; 
+    color: #7A7A7A; 
+}
+
+/* Titre principal de la recette */
+.title-name {
+    font-family: Anton; 
+    font-weight: 400; 
+    font-size: 18px; 
+    height: 3rem; 
+}
+
+/* Description de la recette */
+.description {
+    height: 6rem; 
+}
+
+/* Liste des ingrédients */
+.ingredients {
+    display: flex; 
+    flex-wrap: wrap; 
+    row-gap: 1rem; 
+    height: 12rem; 
+}
+
+/* Éléments individuels des ingrédients */
+.ingredients div {
+    width: 50%; 
+}
+
+/* Quantité d'ingrédients */
+.quantity {
+    color: #7A7A7A; 
+}
