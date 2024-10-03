@@ -129,7 +129,7 @@ main {
 
 .filtre-label input {
   display: none;
-  border-color: 1px solid #C6C6C6;
+  border: 1px solid #C6C6C6;
   padding: 0.3rem;
 }
 
