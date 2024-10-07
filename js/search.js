@@ -12,8 +12,8 @@ function reseach() {
 
     const allRecipes = []; // Initialise un tableau pour stocker les recettes filtrées
 
-    // Si la saisie contient plus de 3 caractères
-    if (searchBar.value.length > 3) {
+    // Si la saisie contient à minima 3 caractères
+    if (searchBar.value.length >= 3) {
         
         recipes.forEach((recipe) => {
             // Vérifie si le nom de la recette correspond à la recherche
@@ -49,6 +49,8 @@ function applyFilter(allRecipes) {
 
     const newRecipe = []; // Initialise un tableau pour stocker les recettes filtrées
 
+    const errorMessage = document.querySelector('#error-message'); // CeciEstUnAjout
+
     allRecipes.forEach((recipe) => {
         let recipeTrue = true; // Initialise un drapeau pour valider la recette
 
@@ -79,6 +81,13 @@ function applyFilter(allRecipes) {
             newRecipe.push(recipe); // Si tous les filtres sont valides, ajoute la recette
         }
     });
+
+    // Afficher le message d'erreur si aucune recette n'est trouvée
+    if (newRecipe.length === 0) {
+        errorMessage.style.display = "block"; // Affiche le message d'erreur
+    } else {
+        errorMessage.style.display = "none"; // Cache le message d'erreur
+    }
 
     displayData(newRecipe); // Affiche les recettes filtrées
     displayFilter(newRecipe); // Met à jour les filtres affichés
