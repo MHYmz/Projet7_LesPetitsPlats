@@ -15,8 +15,9 @@ function filterElement(search) {
     const element = search.parentNode.parentNode.querySelectorAll(".filtre-list > div > p");
     console.log(search.parentNode.parentNode); // Affiche l'élément parent dans la console (pour le débogage)
     
-    // Parcourt chaque élément de la liste et applique le filtre
-    element.forEach((e) => {
+    // Remplacement de .forEach() par une boucle for
+    for (let i = 0; i < element.length; i++) {
+        const e = element[i];
         const valueSpan = e.innerText; // Récupère le texte de l'élément
         // Vérifie si le texte contient la valeur de filtre
         if (valueSpan.toUpperCase().indexOf(filter) > -1) {
@@ -24,7 +25,7 @@ function filterElement(search) {
         } else {
             e.style.display = "none"; // Masque l'élément s'il ne correspond pas
         }
-    });
+    }
 }
 
 // Sélectionne un élément de la liste de filtres

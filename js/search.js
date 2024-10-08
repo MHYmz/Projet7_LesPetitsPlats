@@ -8,7 +8,7 @@ searchBar.addEventListener('keyup', reseach);
 function reseach() {
     // Sélectionne le bouton d'effacement de la recherche
     const clear = document.querySelector(".clear-searchbar");
-    
+
     // Affiche le bouton d'effacement si la barre de recherche contient du texte, sinon le cache
     if (searchBar.value.length > 0) {
         clear.style.display = "block"; // Affiche le bouton d'effacement
@@ -20,10 +20,10 @@ function reseach() {
     let allRecipes = [];
 
     // Vérifie si la longueur du texte de recherche est supérieure à 3 caractères
-    if (searchBar.value.length > 3) {
+    if (searchBar.value.length >= 3) {
         // Crée une expression régulière pour effectuer une recherche insensible à la casse
         const regexSearch = new RegExp(`${searchBar.value.toLowerCase()}`);
-        
+
         // Parcourt toutes les recettes pour trouver des correspondances
         for (let i = 0; i < recipes.length; i++) {
             let reseachTrue = false; // Indicateur de correspondance
@@ -41,6 +41,7 @@ function reseach() {
                 for (let u = 0; u < recipes[i].ingredients.length; u++) {
                     if (regexSearch.test(recipes[i].ingredients[u].ingredient.toLowerCase())) {
                         reseachTrue = true; // Au moins un ingrédient correspond
+                        break; // On arrête dès qu'on trouve une correspondance
                     }
                 }
             }
@@ -66,6 +67,8 @@ function applyFilter(allRecipes) {
     // Tableau pour stocker les recettes filtrées
     const newRecipe = [];
 
+    const errorMessage = document.querySelector('#error-message'); // CeciEstUnAjout
+
     // Parcourt toutes les recettes trouvées pour appliquer les filtres
     for (let i = 0; i < allRecipes.length; i++) {
         let recipeTrue = 0; // Compteur de correspondances
@@ -79,6 +82,7 @@ function applyFilter(allRecipes) {
                     // Vérifie si l'ingrédient correspond au filtre sélectionné
                     if (allRecipes[i].ingredients[u].ingredient.toLowerCase() === selectFilter[f].innerText.toLowerCase()) {
                         checkIngredient = true; // Correspondance trouvée
+                        break; // On arrête dès qu'on trouve une correspondance
                     }
                 }
                 // Incrémente le compteur si un ingrédient correspond
@@ -119,6 +123,16 @@ function applyFilter(allRecipes) {
             newRecipe.push(allRecipes[i]);
         }
     }
+
+         // Afficher le message d'erreur si aucune recette n'est trouvée
+         if (newRecipe.length === 0) {
+         errorMessage.style.display = "block"; // Affiche le message d'erreur
+        } else {
+         errorMessage.style.display = "none"; // Cache le message d'erreur
+        }
+
+
+
     // Affiche les données des nouvelles recettes filtrées
     displayData(newRecipe);
     // Affiche les filtres appliqués
